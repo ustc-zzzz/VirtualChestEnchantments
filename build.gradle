@@ -1,0 +1,32 @@
+apply plugin: 'java'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+defaultTasks 'clean', 'build'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'sponge'
+        url = 'http://repo.spongepowered.org/maven'
+    }
+    maven {
+        name = 'virtualchest'
+        url = 'https://dl.bintray.com/zzzz/VirtualChest'
+    }
+}
+
+version = '1.0.0'
+group = 'com.github.ustc_zzzz'
+archivesBaseName = 'VirtualChestEnchantments'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << '-Xlint:all' // << '-Werror'
+}
+
+dependencies {
+    compile 'org.spongepowered:spongeapi:7.+'
+    compile 'com.github.ustc_zzzz:VirtualChestAPI:1.+'
+}
