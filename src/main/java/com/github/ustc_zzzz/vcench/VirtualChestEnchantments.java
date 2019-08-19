@@ -35,7 +35,15 @@ import java.util.function.Function;
  * @author ustc_zzzz
  */
 @NonnullByDefault
-@Plugin(id = "vcench", name = "VirtualChestEnchantments", version = "1.0.0", description = "VirtualChestEnchantments")
+@Plugin (id = "vcench",
+        version = "1.0.0",
+        name = "VirtualChestEnchantments",
+        description = "VirtualChestEnchantments",
+        dependencies = {
+        @Dependency(
+                id = "virtualchest",version = "1.0.0-rc-4"
+        )
+})
 public class VirtualChestEnchantments
 {
     private final Function<PlayerInventory, ItemStackSnapshot> getCursorItem;
