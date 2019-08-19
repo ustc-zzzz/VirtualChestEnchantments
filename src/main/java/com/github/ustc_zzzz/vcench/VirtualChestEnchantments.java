@@ -5,6 +5,7 @@ import com.github.ustc_zzzz.virtualchest.api.action.VirtualChestActionExecutor.H
 import com.github.ustc_zzzz.virtualchest.api.action.VirtualChestActionExecutor.LoadEvent;
 import com.google.common.collect.ClassToInstanceMap;
 import com.google.common.collect.Iterators;
+import org.spongepowered.api.Platform;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.CommandResult;
 import org.spongepowered.api.data.manipulator.immutable.item.ImmutableEnchantmentData;
@@ -17,6 +18,7 @@ import org.spongepowered.api.item.inventory.ItemStack;
 import org.spongepowered.api.item.inventory.ItemStackSnapshot;
 import org.spongepowered.api.item.inventory.Slot;
 import org.spongepowered.api.item.inventory.entity.PlayerInventory;
+import org.spongepowered.api.plugin.Dependency;
 import org.spongepowered.api.plugin.Plugin;
 import org.spongepowered.api.util.Coerce;
 import org.spongepowered.api.util.annotation.NonnullByDefault;
@@ -35,7 +37,7 @@ import java.util.function.Function;
  * @author ustc_zzzz
  */
 @NonnullByDefault
-@Plugin(id = "vcench", name = "VirtualChestEnchantments", version = "1.0.0", description = "VirtualChestEnchantments")
+@Plugin(id = "vcench", name = "VirtualChestEnchantments", version = "1.0.1", description = "VirtualChestEnchantments", dependencies = {@Dependency(id = Platform.API_ID), @Dependency(id = "virtualchest")})
 public class VirtualChestEnchantments
 {
     private final Function<PlayerInventory, ItemStackSnapshot> getCursorItem;
